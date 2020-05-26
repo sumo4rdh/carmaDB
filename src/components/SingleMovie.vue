@@ -47,7 +47,9 @@
     <div class="single-movie-cast">
       <div class="single-movie-cast--person"
           v-for="person in credits.cast">
-        <img v-if="person.profile_path !== null || person.profile_path !== undefined" :src="'https://image.tmdb.org/t/p/w138_and_h175_face' + person.profile_path" alt="">
+        <img v-if="person.profile_path !== null || person.profile_path !== undefined"
+             :src="'https://image.tmdb.org/t/p/w138_and_h175_face' + person.profile_path"
+             alt="">
         <div v-else class="no-image" >
           <img src="https://www.themoviedb.org/assets/2/v4/glyphicons/basic/glyphicons-basic-4-user-grey-d8fe957375e70239d6abdd549fd7568c89281b2179b5f4470e2e12895792dfa5.svg" alt="">
         </div>
@@ -165,11 +167,15 @@ export default {
     width: 100%
     margin: 0 auto
     padding: 0 2rem
+    @media screen and (max-width: 740px)
+      max-width: 100%
   &-info
     display: grid
     grid-template-columns: 5fr 18fr
     color: white
     text-align: left
+    @media screen and (max-width: 740px)
+      display: block
   &-right
     padding-left: 1rem
   &-recomendation
@@ -180,6 +186,9 @@ export default {
       max-width: 1300px
       width: 100%
       margin: 0 auto
+      overflow: auto
+    @media screen and (max-width: 740px)
+      grid-template-columns: repeat(3, 1fr)
   &-people
     margin-top: 20px
     justify-content: flex-start
@@ -213,7 +222,7 @@ export default {
     justify-content: flex-start
     overflow-x: scroll
     &--person
-      min-width: 140px
+      max-width: 140px
       margin-right: 1rem
 
   .sub-info span
@@ -233,6 +242,14 @@ export default {
       display: inline-flex
       align-content: center
       align-items: center
+  @media screen and (max-width: 740px)
+    &-info
+      padding: 0
+    &-heading
+      margin-left: 0
+    &-cast, &-content
+      max-width: 90vw
+      padding: 0
 .no-image
   width: 138px
   height: 175px

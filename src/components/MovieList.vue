@@ -107,12 +107,13 @@ export default {
 
 <style lang="sass">
 .list-container
-
   padding: 40px
   display: grid
   grid-template-columns: repeat(4, 1fr)
   grid-auto-rows: auto
   grid-gap: 2rem
+  @media screen and (max-width: 740px)
+    grid-template-columns: repeat(2, 1fr)
 .v-select
   background: white
   margin: 0 2rem
