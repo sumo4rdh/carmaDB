@@ -20,7 +20,7 @@
     "vue-infinite-scroll": "^2.0.2",
     "vue-router": "^3.0.1",
     "vue-select": "^3.10.3",
-    "vuetify": "^2.2.29"
+    "vuetify": "^2.6.10"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
